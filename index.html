@@ -6,11 +6,14 @@
     <h1>Api Test Page</h1>
     <h2>Welcome</h2>
     <script>
-    $(document).ready(function(){
-  $("p").click(function(){
-    $(this).hide();
-  });
-});
+const Http = new XMLHttpRequest();
+const url='https://jsonplaceholder.typicode.com/posts';
+Http.open("GET", url);
+Http.send();
+
+Http.onreadystatechange = (e) => {
+  console.log(Http.responseText)
+}
       </script>  
      <form action="/action_page.php" method="get">
       <label for="fname">First name:</label>
